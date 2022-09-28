@@ -1,0 +1,585 @@
+\documentclass[UTF8,AutoFakeBold,b5paper]{ctexbook}
+\usepackage{ctex}
+\usepackage{framed}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{mathrsfs}
+\geometry{left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage{color}
+\title{\kaishu\textbf{仪器分析复习}}
+\author{\kaishu{张博涵(xb782053@gmail.com)}\\
+\kaishu{bilibili:天才我张主教}\\
+\kaishu{知乎:小张也要开心}\\
+\kaishu{GitHub:www.github.com/BHanZhang}}
+\date{\kaishu \today}
+\setCJKsansfont{KaiTi}
+\usepackage{chemfig}
+\usepackage{mathrsfs}
+\usepackage{listings}
+\usepackage{makeidx}
+\makeindex
+\usepackage{framed}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\bibliographystyle{plain}
+\usepackage{subfiles}
+\usepackage{booktabs}
+\usepackage{graphicx,times}
+\usepackage{esint}
+\usepackage{times}
+\usepackage{subfigure}         
+\usepackage{natbib}
+\usepackage{amssymb,amsmath}
+\usepackage{url}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{mhchem}
+%\usepackage[usenames,dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{bm}
+
+\definecolor{mygray}{gray}{.9}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+
+
+\usepackage[breaklinks,colorlinks,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\begin{document}
+\kaishu
+	\maketitle
+	\tikz[remember picture, overlay] 
+  \node at (current page.center) {\kaishu{祝大家取得好成绩!}};
+	\tableofcontents
+%	\tikz[remember picture, overlay] 
+%  \node at (current page.center)$\mathscr{Instrument Analysis}$
+\chapter{电分析} \index{电分析}
+	电分析一般分为以下四类：
+	\begin{enumerate}
+		\item  电导分析法
+		\item 电位分析法（pH 与离子选择性电极）
+		\item 电流分析法（库伦分析法和电重量法）
+		\item 伏安分析法（极谱分析法和溶出伏安法）
+	\end{enumerate}
+\section{电位分析中的指示电极和参比电极} \index{参比电极} \index{指示电极}
+\textcolor[rgb]{0.54,0.13,0.33}{用于指示溶液中活度变化的电极}是为指示电极(indicator electrode)，主要分为金属基电极（四类电极）和膜电极。指示电极的电位并非恒定不变的。
+
+
+\textcolor[rgb]{0.54,0.13,0.33}{电极电位恒定，不随溶液中待测离子活度或者浓度变化而变化的电极}是为参比电极(reference electrode)。
+
+
+\subsubsection{标准氢电极}
+标准氢电极(SHE)是理想参比电极，是确定电极电位的基准（一级标准电极）。 \index{标准氢电极}
+\begin{equation*}
+	\ce{Pt},\ce{H2}|\ce{H+}(\ce{aq},a = 1.0\ce{mol/L})
+\end{equation*}
+\begin{equation}
+	E_{\ce{H+/H}}=E_{\ce{H+/H}}^{\ominus}+\dfrac{RT}{F}\ln{\dfrac{a_{\ce{H+}}}{\sqrt{p}}}
+\end{equation}
+
+
+\subsection{金属基电极(metallic electrode)} \index{金属基电极}
+\subsubsection{第一类电极（活性金属电极）} \index{第一类电极} \index{活性金属电极}
+
+第一类电极是\textcolor[rgb]{0.54,0.13,0.33}{金属电极与其金属离子溶液组成的体系}，\textcolor[rgb]{0.07,0.36,0.57}{电极电位取决于此金属离子的活度}。
+\subsubsection{第二类电极（金属|难溶盐电极）} \index{第二类电极} \index{金属 难溶盐电极}
+第二类电极是\textcolor[rgb]{0.54,0.13,0.33}{金属及其难溶盐（或配离子）所组成的电极体系}，间接反映与该金属离子反应而形成难溶盐的\textcolor[rgb]{0.54,0.13,0.33}{阴离子的}活度，\textcolor[rgb]{0.07,0.36,0.57}{电极电位取决于阴离子的活度}。
+
+甘汞电极和银-氯化银电极都属于第二类电极： \index{甘汞电极} \index{银-氯化银电极}
+
+
+\subsubsection{\textcolor[rgb]{0.54,0.13,0.33}{常用的参比电极}饱和甘汞电极和银-氯化银电极}
+\begin{equation}
+	E_{\ce{Hg2Cl2/Hg}}=E_{\ce{Hg2Cl2/Hg}}^{\ominus}-0.0592\lg{a_{\ce{Cl-}}}
+\end{equation}
+
+\begin{equation}
+	E_{\ce{AgCl/Ag}}=E_{\ce{AgCl/Ag}}^{\ominus}-0.0592\lg{a_{\ce{Cl-}}}
+\end{equation}
+
+
+甘汞电极:$\begin{cases}
+\text{外玻璃管：饱和\ce{KCl} 溶液}\\
+\text{内管：汞}	
+\end{cases}
+$
+
+
+银-氯化银电极:$\begin{cases}
+\text{外玻璃管：\ce{AgCl/Ag} 溶液}\\
+\text{内管：\ce{Cl-} 参比溶液}	
+\end{cases}
+$
+
+
+\subsubsection{第三类电极} \index{第三类电极}
+第三类电极是\textcolor[rgb]{0.54,0.13,0.33}{金属与两种具有相同阴离子的难溶盐（或难解离的配合物），再与含有第二种难溶盐（或难解离的配合物）的阳离子组成的电极体系。}，\textcolor[rgb]{0.07,0.36,0.57}{电极电位取决于此金属离子的活度}。
+\subsubsection{第〇类电极} \index{第〇类电极}
+第〇类电极是\textcolor[rgb]{0.54,0.13,0.33}{惰性金属电极}，比如铂电极。 \index{惰性金属电极} \index{铂电极}
+
+
+
+
+
+
+\subsection{离子选择电极}\index{离子选择电极}
+
+膜电位(mombrane potential)：即膜内扩散电位和膜与电解质溶液形成的内外界面的 Donnan 电位的代数和：\index{膜电位}
+\begin{enumerate}
+	\item  扩散电位：在两种不同离子或离子相同而活度不同的液液界面上，由于离子扩散速率的不用，能形成液接电位（扩散电位）\index{扩散电位}
+	\item Donnan 电位：两相界面电荷分布不均匀，产生双电层结构，形成的电位差。\index{Donnan 电位}
+\end{enumerate}
+
+
+
+
+\subsubsection{玻璃膜电极(gas electrode)}\index{玻璃膜电极}
+在 25℃时其电极电位为：
+\begin{equation}
+	E = const -0.0592\ce{pH}
+\end{equation}
+
+玻璃电极很娇气，使用前要在纯水中浸泡24h进行活化，以使得其表面硅酸盐基团平衡，不对称电位处于稳定值。（\textcolor[rgb]{0.54,0.13,0.33}{但不对称电位的来源并非是玻璃内外溶液的$\ce{H+}$离子活度不同。}）
+
+用玻璃电极测量 pH时，采用的定量分析方法为\textcolor[rgb]{0.07,0.36,0.57}{直接比较法}
+\subsubsection{晶体膜电极(crystalline-membrane electrode)}\index{晶体膜电极}
+氟电极在 25℃时其电极电位为：\index{氟电极}
+\begin{equation}
+	E_{\text{电池}} = K+0.0592\lg{a_{\ce{F-}}}
+\end{equation}
+
+氟电极在进行测量电位时，要求被测溶液的 pH 在 5$\sim$7之间。\textcolor[rgb]{0.56,0.28,0.16}{主要干扰离子为$\ce{OH-}$离子}
+
+
+离子选择电极是一类化学传感器，\textcolor[rgb]{0.54,0.13,0.33}{其电位是由于离子的浓度和活度而产生的。}
+
+
+离子选择电极主要包括两类：\begin{enumerate}
+	\item  原电极：\textcolor[rgb]{0.54,0.13,0.33}{晶体膜电极(\textcolor[rgb]{0.07,0.36,0.57}{均相晶体膜电极、非均相晶体膜电极})}、\textcolor[rgb]{0.54,0.13,0.33}{非晶体膜电极(\textcolor[rgb]{0.07,0.36,0.57}{刚性基质电极、流动载体电极})}\index{原电极}\index{刚性基质电极}\index{流动载体电极}\index{非晶体膜电极}\index{均相晶体膜电极}\index{非均相晶体膜电极}\index{晶体膜电极}
+	\item 敏化离子选择电极：\textcolor[rgb]{0.54,0.13,0.33}{敏化离子选择电极（\textcolor[rgb]{0.07,0.36,0.57}{气敏电极、酶电极}）}\index{敏化离子选择电极}\index{气敏电极}\index{酶电极}
+\end{enumerate}
+
+
+\subsection{电极的选择}
+\begin{table}[h]
+    \centering
+     \begin{tabular}{p{4cm}<{\centering} p{4cm}<{\centering} p{4cm}<{\centering} p{2cm}<{\centering} p{2cm}<{\centering} p{2cm}<{\centering}}
+		\toprule
+        \kaishu 滴定方法&  \kaishu 指示电极 &\kaishu  参比电极 \\
+        
+        \midrule      
+        \kaishu 酸碱滴定&\kaishu 玻璃电极&\kaishu 甘汞电极\\
+        \kaishu  氧化还原滴定&\kaishu 铂电极&\kaishu 甘汞电极\\
+          \kaishu 沉淀滴定&\kaishu 离子选择性电极或其他电极&\kaishu 玻璃电极或双盐桥甘汞电极\\
+        \kaishu   络合滴定&\kaishu 铂电极或相关的离子选择性电极&\kaishu 甘汞电极\\
+        \bottomrule
+    \end{tabular}
+    \caption{电位滴定的电极选择}
+\end{table}
+
+\subsection{电极的性能指标}
+\subsubsection{电位选择性系数}\index{电位选择性系数}
+$j$对 $i$ 的影响：电位选择性系数$K_{ij}^{\ce{Pot}}$，用于判断干扰离子干扰程度、对被测离子的选择程度。其计算公式为：
+\begin{equation}
+	K_{ij}^{\ce{Pot}} = \dfrac{a_{i}}{a_{j}^{n_{i}/n_{j}}}
+\end{equation}
+$i$对$j$的电位选择系数为$K_{ij}^{\ce{Pot}}$,那么说明电极对$i$的选择性响应为对$j$的$\dfrac{1}{K_{ij}^{\ce{Pot}}}$倍
+
+\textcolor[rgb]{0.54,0.13,0.33}{\begin{equation}
+	\text{相对误差} = K_{ij}^{\ce{Pot}}\dfrac{a_{j}^{n_{i}/n_{j}}}{a_{i}}\times 100\%
+\end{equation}}
+\begin{equation}
+	E_{M} = K'+\dfrac{RT}{nF}\ln{(a_{i}+K_{ij}^{\ce{Pot}}a_{j}^{z_{i}/z_{j}})}
+\end{equation}
+\section{电位分析法(Potentiometric Analysis)}\index{电位分析法}
+\textcolor[rgb]{0.54,0.13,0.33}{电位法用于低价离子的测定}，高价离子的灵敏度低，测量误差大。
+
+电位分析法又分为两类：
+\begin{enumerate}
+	\item  第一类方法：\textcolor[rgb]{0.54,0.13,0.33}{直接电位法(direct potentiometry)}：直接根据 Nernst 方程计算出浓度。\index{直接电位法}
+	\item 第二类方法：\textcolor[rgb]{0.54,0.13,0.33}{电位滴定法(potentiometry titration)}：观察指示电极电位的变化，然后确定测定的终点。\index{电位滴定法}
+\end{enumerate}
+\begin{equation}
+	E_{\ce{s}} = E_{\ce{AgCl/Ag}}+\dfrac{RT}{F}\ln{\dfrac{\alpha_{\ce{s}}}{\alpha_{\ce{r}}}}+E_{\ce{a}}+E_{\ce{j}}-E_{\ce{SCE}}
+\end{equation}
+\begin{equation}
+	E_{\ce{x}} = E_{\ce{AgCl/Ag}}+\dfrac{RT}{F}\ln{\dfrac{\alpha_{\ce{x}}}{\alpha_{\ce{r}}}}+E_{\ce{a}}+E_{\ce{j}}-E_{\ce{SCE}}
+\end{equation}
+重要公式：
+\textcolor[rgb]{0.54,0.13,0.33}{\begin{equation}
+	\ce{pH}_{\text{未知}} = \ce{pH}_{\text{标准}}+\dfrac{E_{\text{未知}}-E_{\text{标准}}}{2.303RT/F}=\ce{pH}_{\text{标准}}+\dfrac{E_{\text{未知}}-E_{\text{标准}}}{0.0592}
+\end{equation}}
+\textcolor[rgb]{0.54,0.13,0.33}{\begin{equation}
+	\text{一次标准加入公式：} c_{\text{未知}} = \dfrac{\Delta c}{10^{\Delta E/S} - 1}
+\end{equation}
+\begin{equation}
+	\text{其中}S = 2.303\dfrac{RT}{F} 
+\end{equation}}
+
+
+测定电极电位，要稳定溶液的 pH 在一定范围内，需加入 TISAB（总离子强度调节缓冲剂，total ionic strength adjustment buffer）\index{TISAB}
+
+\textcolor[rgb]{0.56,0.28,0.16}{所以$\ce{NH4Cl}$不是其中的组分}
+
+
+\subsubsection{电位法的误差}
+\textcolor[rgb]{0.54,0.13,0.33}{\begin{equation}
+	\dfrac{\Delta c}{ c} = \dfrac{nF}{RT}\Delta E \approx 3900n\Delta E\%
+\end{equation}}
+直接电位法的主要误差来源：
+\begin{enumerate}
+	\item  \textcolor[rgb]{0.54,0.13,0.33}{温度}，影响 Nerest 响应的斜率。
+	\item \textcolor[rgb]{0.54,0.13,0.33}{电动势测量的准确性}。
+	\item \textcolor[rgb]{0.54,0.13,0.33}{干扰离子}，必须掩蔽干扰离子。
+	\item \textcolor[rgb]{0.54,0.13,0.33}{溶液的 pH、	欲测离子的浓度、电极响应时间、迟滞效应}。
+\end{enumerate}
+
+
+\chapter{谱分析}\index{谱分析}
+\section{原子吸收光谱}\index{原子吸收光谱}
+\subsection{原子吸收光谱的各种优缺点}
+\subsubsection{原子吸收光谱的优点}
+\begin{enumerate}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{ 检出限低，灵敏度高}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{选择性好}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{精密度高}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{分析速度快}
+	\item 光谱干扰少(使用共振谱线，特征激发)
+	\item 应用范围广
+	\item 价格低廉，仪器比较简单
+\end{enumerate}
+\subsubsection{火焰原子化器的优缺点}\index{火焰原子化器}
+\begin{itemize}
+	\item 优点\begin{enumerate}
+		\item \textcolor[rgb]{0.54,0.13,0.33}{操作简单}
+		\item \textcolor[rgb]{0.54,0.13,0.33}{火焰稳定}
+		\item \textcolor[rgb]{0.54,0.13,0.33}{重现性好}
+		\item \textcolor[rgb]{0.54,0.13,0.33}{精密度高}
+		\item 应用范围广
+	\end{enumerate}
+	\item 缺点：\begin{enumerate}
+		\item 原子化效率低
+		\item 只能液体进样
+	\end{enumerate}
+\end{itemize}
+
+\paragraph{石墨炉原子化器的优缺点}\index{石墨炉原子化器}
+\begin{itemize}
+	\item 优点\begin{enumerate}
+		\item \textcolor[rgb]{0.54,0.13,0.33}{检出限绝对值低}，比火焰原子化法低 3 个数量级
+		\item 可以直接以溶液、固体进样，进样量少
+		\item 可分析元素范围广
+	\end{enumerate}
+	\item 缺点\begin{enumerate}
+		\item  基体效应、化学干扰多
+		\item 有较强的背景
+		\item \textcolor[rgb]{0.54,0.13,0.33}{测量的重现性比较差}
+	\end{enumerate}
+\end{itemize}
+\subsection{原子吸收光谱的基本原理}
+\subsubsection{基态原子与激发态原子数的关系}
+根据 Boltzmann 分布律：\index{Boltzmann 分布律}
+\begin{equation}
+	\textcolor[rgb]{0.54,0.13,0.33}{\dfrac{\text{激发态}}{\text{基态}} }\quad \dfrac{N_{i}}{N_{0}} = \frac{g_{i}}{g_{0}}e^{\dfrac{-E_{i}}{kT}}
+\end{equation}
+明显看出\textcolor[rgb]{0.54,0.13,0.33}{温度上升}带来的激发态原子数占比要\textcolor[rgb]{0.54,0.13,0.33}{增大}。
+
+\subsubsection{积分吸收与峰值吸收}\index{积分吸收}\index{峰值吸收}
+峰值吸收（中心频率/中心波长，半宽度），\textcolor[rgb]{0.54,0.13,0.33}{Doppler 变宽}的程度用下式进行表达：\index{中心频率}\index{中心波长}\index{半宽度}\index{Doppler 变宽}
+\begin{equation}
+	\Delta \nu_{D} = 7.16\times 10^{-7}\nu_{0}\sqrt{\dfrac{T}{A_{r}}}
+\end{equation}
+明显看出：温度升高、原子质量变小，将会加重 \textcolor[rgb]{0.54,0.13,0.33}{Doppler 变宽}。
+
+\textcolor[rgb]{0.54,0.13,0.33}{Doppler} 变宽是一种热变宽\index{热变宽}，而关于压力变宽，\textcolor[rgb]{0.54,0.13,0.33}{Lorentz变宽}\index{Lorentz变宽}是指不同原子的相互碰撞造成的变宽，气体压力增大和温度升高都会使得它变宽的更加明显；Holtzmark 变宽是指相同原子相互碰撞造成的变宽\index{Holtzmark 变宽}，只有在被测元素浓度较高时会有作用，一般而言可以忽略。
+
+\subsection{仪器部分}
+\subsubsection{光源：\textcolor[rgb]{0.54,0.13,0.33}{空心阴极灯}}\index{空心阴极灯}
+\begin{itemize}
+	\item  阳极：钨棒
+	\item 阴极：待测的纯金属或者合金
+	\item 内充：低压惰性气体
+	\item 作用：可以发出待测原子对应的特征谱线
+\end{itemize}
+
+\subsubsection{原子化器}
+火焰原子化器的火焰：
+
+\begin{table}[h]
+    \centering
+     \begin{tabular}{p{4cm}<{\centering} p{4cm}<{\centering} p{4cm}<{\centering} p{2cm}<{\centering} p{2cm}<{\centering} p{2cm}<{\centering}}
+		\toprule
+        \kaishu 火焰类型&  \kaishu 性质 &\kaishu  目标检测物 \\
+        
+        \midrule      
+        \kaishu 化学计量火焰&\kaishu 温度高、稳定、干扰少、背景低&\kaishu 用于广泛的许多原子的测定\\
+        \kaishu  富燃\textcolor[rgb]{0.54,0.13,0.33}{（气）}火焰&\kaishu 具有还原性&\kaishu 用于\textcolor[rgb]{0.54,0.13,0.33}{易形成难解离氧化物的元素的测定}\\
+          \kaishu 贫燃火焰&\kaishu 胶枪的氧化性&\kaishu 易解离、易电离的元素（\textcolor[rgb]{0.54,0.13,0.33}{比如碱金属}）的测定\\
+        \bottomrule
+    \end{tabular}
+    \caption{火焰类型对比}
+\end{table}
+
+
+\begin{table}[h]
+    \centering
+     \begin{tabular}{p{4cm}<{\centering} p{4cm}<{\centering} p{4cm}<{\centering} p{2cm}<{\centering} p{2cm}<{\centering} p{2cm}<{\centering}}
+		\toprule
+        \kaishu 燃气名称&  \kaishu 助燃气 &\kaishu  $T/\ce{K}$ \\
+        
+        \midrule      
+        \kaishu 乙炔&\kaishu 空气&\kaishu 2300\\
+        \kaishu  &\kaishu 氧气&\kaishu 3160\\
+        \kaishu  &\kaishu 氧化亚氮&\kaishu 2950\\
+        \kaishu  氢气&\kaishu 空气&\kaishu 2050\\
+        \kaishu  丙烷&\kaishu 空气&\kaishu 1920\\
+        \bottomrule
+    \end{tabular}
+    \caption{火焰温度对比}
+\end{table}
+\subsubsection{单色器}
+置于样品池后，\textcolor[rgb]{0.54,0.13,0.33}{可将被测元素的共振吸收线与邻近谱线分开}。置于原子化器后，防止原子化器内发射辐射干扰进入检测器。
+
+\subsection{干扰简介}
+\subsubsection{物理干扰}
+
+物理干扰是指在试样转移，气溶胶形成，试样热解、灰化，被测元素原子化等过程中，由于试样的任何物理特性变化而引起的原子吸收信号下降的效应。
+
+\textcolor[rgb]{0.07,0.36,0.57}{配置与被测试样组成相近的标准溶液或采用标准加入法。}如果试样溶液浓度较高，还可以使用稀释法。\textcolor[rgb]{0.54,0.13,0.33}{这样可以消除基体效应带来的干扰，但并不能消除背景对其的干扰。}
+\subsubsection{化学干扰}
+\begin{enumerate}
+	\item  选择合适的原子化方法
+	\item 加入\textcolor[rgb]{0.54,0.13,0.33}{释放剂}：释放剂与干扰物质形成比被测物质与干扰物质更加稳定的配合物（释放的是被测物质）。\index{释放剂}
+	\item 加入\textcolor[rgb]{0.54,0.13,0.33}{保护剂}：保护剂与被测物质形成比干扰物质更加稳定的配合物（保护的是被测物质）。\index{保护剂}
+	\item 加入\textcolor[rgb]{0.54,0.13,0.33}{基体改进剂}：在试样中加入基体改进剂，使得其在干燥或灰化过程中与试样发生化学变化。\textcolor[rgb]{0.54,0.13,0.33}{在原子化前除去，避免与待测元素共挥发。}\index{基体改进剂}
+\end{enumerate}
+\subsubsection{电离干扰}
+
+高温条件下，原子会电离，使得基态原子数减少，吸光值下降。此谓\textcolor[rgb]{0.54,0.13,0.33}{电离干扰}。
+
+解决方法为加入过量\textcolor[rgb]{0.54,0.13,0.33}{消电离剂}，\textcolor[rgb]{0.07,0.36,0.57}{比如在测定$\ce{Ca2+}$}时，加入过量的$\ce{K+}$来消除。
+
+\subsubsection{光谱干扰}
+\begin{enumerate}
+	\item  吸收线重叠：另选分析线
+	\item 光谱通带内存在非吸收线：\textcolor[rgb]{0.07,0.36,0.57}{减少狭缝宽度与灯电流，或者另选谱线}
+\end{enumerate}
+\subsubsection{背景干扰}
+\begin{enumerate}
+	\item  分子吸收：混入了不干净的分子的谱线，分子的谱线是连续的带状光谱，所以会在一定的波长范围内产生干扰。
+	\item 光散射：原子化过程中产生微小的固体课里造成的散射。
+\end{enumerate}
+
+解决办法：
+\begin{enumerate}
+	\item 使用\textcolor[rgb]{0.54,0.13,0.33}{氘}灯连续光源进行校正
+	\item Zeeman 效应背景校正法：利用电磁学性质\index{Zeeman 效应背景校正法}
+\end{enumerate}
+
+\subsection{仪器评估}
+\subsubsection{灵敏度}\index{灵敏度}
+
+灵敏度的原始定义为：\textcolor[rgb]{0.54,0.13,0.33}{分析校准曲线的斜率}
+，在实际原子吸收光谱中，采用\textcolor[rgb]{0.54,0.13,0.33}{特征灵敏度（1\%灵敏度）}：能产生 1\%吸收（即吸光度为 0.0044）信号时所对应被测元素的浓度或质量（\textcolor[rgb]{0.54,0.13,0.33}{特征浓度}）。\index{特征浓度}\index{特征灵敏度}
+\begin{equation}
+	c_{0} = \dfrac{0.0044c_{\ce{x}}}{A}
+\end{equation}
+单位采用$\mu \ce{g}/\ce{mL}$或者$\mu \ce{g}/\ce{g}$来表示。
+
+\subsubsection{检出限}\index{检出限}
+检出限定义为\textcolor[rgb]{0.54,0.13,0.33}{空白溶液多次测量平均值与 3 倍空白溶液测量的标准差之和，它所对应的被测元素浓度即为检出限D.L.}
+\begin{equation}
+	\ce{D_{.}L_{.} = \dfrac{3s_{\ce{B}}}{S}}
+\end{equation}
+
+\section{分光光度法}
+\subsection{重要公式整理}
+\subsubsection{Lambert-Beer 定律}\index{Beer 定律}
+\begin{equation}
+	A = \varepsilon b c
+\end{equation}
+其中，$A$为吸光度，是透射比$T$的倒对数。即：\index{吸光度}\index{透射比}
+\begin{equation}
+	A = \lg \dfrac{1}{T} = \lg{\dfrac{I_{0}}{I_{\ce{t}}}}
+\end{equation}
+\subsubsection{仪器条件的选择}
+\textcolor[rgb]{0.54,0.13,0.33}{\begin{equation}
+	\dfrac{\Delta c}{c} = \dfrac{0.4343\Delta T}{T\lg{T}}
+\end{equation}
+}
+对其求导得零，可解得分析条件为：\textcolor[rgb]{0.54,0.13,0.33}{$T = 36.8\%$吸光度为0.434}
+
+值得一提，分光光度法误差较小的范围为$T:15\%\sim 65\%$、$A:0.2\sim 0.8$
+\subsection{显色的条件}\index{显色反应}
+\subsubsection{如何选择参比试剂}
+\begin{enumerate}
+	\item 试剂、显色剂都无色：用去离子水、蒸馏水
+	\item 试剂有色，显色剂无色：试液
+	\item 试剂无色，显色剂有色：试剂空白（把试剂部分用蒸馏水代替）
+	\item 试剂、显色剂都有色：先掩蔽，再显色，再空白
+\end{enumerate}
+\chapter{色分析}
+色分析一般包括色谱分析法和毛细电泳分析法。
+\section{色谱理论}
+按作用机理来分色谱，色谱可以分为：
+\begin{enumerate}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{吸附色谱法}：利用组分在吸附剂（固定相）上的吸附能力强弱的不同而得到分离的方法。\index{吸附色谱法}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{分配色谱法}：利用组分在固定液（固定相）中溶解度不同而达到分离的方法。\index{分配色谱法}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{离子交换色谱法}：利用组分在离子交换剂（固定相）上亲和力大小不同而达到分离的方法。\index{离子交换色谱法}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{凝胶色谱法（尺寸排阻色谱法）}：利用大小不同的分子在多孔固定相中的选择渗透而达到分离的方法。\index{凝胶色谱法}\index{尺寸排阻色谱法}
+	\item \textcolor[rgb]{0.54,0.13,0.33}{亲和色谱法}：不同组分与固定相（固定化分子）的高专属性亲和力进行分离的技术。\index{亲和色谱法}
+\end{enumerate}
+\subsection{色谱分离参数}
+\subsubsection{相对保留值$r_{2,1}$}\index{相对保留值}
+相对保留值代表着两组分在色谱上分离的程度差别，\textcolor[rgb]{0.54,0.13,0.33}{$r_{2,1}$值越接近于 1，两组分越难以分开}。
+\begin{equation}
+	r_{2,1} = \dfrac{t_{r_{2}}^{'}}{t_{r_{1}}^{'}}
+\end{equation}
+相对保留至只与柱温及固定相性质有关，与柱径、柱长、填充情况、流动相流速无关。
+\subsubsection{半峰宽$W_{1/2}$、峰底宽度$W$}\index{半峰宽}\index{峰底宽度}
+有这样的关系式：
+\begin{equation}
+	W_{1/2} = 2.354\sigma
+\end{equation}
+\begin{equation}
+	W = 4\sigma
+\end{equation}
+\begin{equation}
+	W = 1.699W_{1/2}
+\end{equation}
+\subsubsection{分配系数$K$}\index{分配系数}
+分配系数定义为：\textcolor[rgb]{0.56,0.28,0.16}{在一定温度或压力下，组分在固定相和流动相之间分配达到平衡时的浓度之比值}
+\begin{equation}
+	K = \dfrac{\text{溶质在固定相中的浓度}}{\text{溶质在流动相中的浓度}} = \dfrac{c_{\ce{s}}}{c_{\ce{m}}}
+\end{equation}
+分配系数$K$小的组分在流动相中浓度大先流出色谱柱，$K = 0$代表该组分\textcolor[rgb]{0.07,0.36,0.57}{根本没有进入固定相，所以应直接流出色谱柱}。
+\subsubsection{分离度$R$}\index{分离度}
+分离度$R$定义为\textcolor[rgb]{0.56,0.28,0.16}{相邻两组分色谱峰保留值之差与两组分色谱峰底宽和之半的比值}。
+\begin{equation}
+	R = \dfrac{t_{r_{2}}-t_{r_{1}}}{(W_{2}+W_{1})/2} = \dfrac{2(t_{r_{2}}-t_{r_{1}})}{W_{2}+W_{1}}
+\end{equation}
+所谓“\textcolor[rgb]{0.54,0.13,0.33}{分开}的定量描述即为：$R \geq 1.5$。
+\subsubsection{保留指数（Kovats指数）}\index{保留指数}\index{Kovats指数}
+保留指数是一种重现性比其他都好的定性参数，可直接进行对照，而不需要标准样品作为参考。
+保留指数$I_{\ce{x}}$的计算方法如下：
+\begin{equation*}
+	I_{\ce{x}} = 100 \times \left[n+\dfrac{ \lg{t^{'}_{\ce{r}}(\ce{x})}-\lg{t^{'}_{\ce{r}}(\ce{C_{n}})}  }{ \lg{t^{'}_{\ce{r}}(\ce{C_{n+1}})}-\lg{t^{'}_{\ce{r}}(\ce{C_{n}})}  }    \right]
+\end{equation*}
+最早是根据“碳数规则”进行导出的，其内容为\textcolor[rgb]{0.56,0.28,0.16}{在一定温度下，同系物的调整保留时间的对数与分子中碳原子的数量呈线性关系}即：
+\begin{equation*}
+	\lg{t_{\ce{r}}^{'}} = A_{1}n + C_{1}
+\end{equation*}
+
+其中$A_{1}$、$C_{1}$是常数，$n$为分子中的碳原子数（$n \geq 3$）。
+\section{色谱理论}
+\subsection{Martin塔板理论}\index{塔板理论}
+\begin{equation}
+	H = \dfrac{L}{n}
+\end{equation}
+
+\begin{equation}
+	n_{\ce{eff}} = 5.54\left( \dfrac{t_{\ce{r}}^{'}}{W_{1/2}} \right) = 16\left( \dfrac{t_{\ce{r}}^{'}}{W} \right)
+\end{equation}
+\begin{equation}
+	H_{\ce{eff}} = \dfrac{L}{n_{\ce{eff}}}
+\end{equation}
+
+\begin{equation}
+	n_{\ce{eff}} = 16R^{2}\left( \dfrac{r_{21}}{r_{21}-1} \right)^{2}
+\end{equation}
+\subsection{van Deemter 速率理论}
+\subsubsection{van Deemter 方程}\index{van Deemter 方程}
+\begin{equation}
+	H = A+\dfrac{B}{u} +Cu
+\end{equation}
+
+其中，\textcolor[rgb]{0.54,0.13,0.33}{$A$}是\textcolor[rgb]{0.54,0.13,0.33}{涡流扩散项}，\textcolor[rgb]{0.54,0.13,0.33}{B}是\textcolor[rgb]{0.54,0.13,0.33}{分子扩散项（纵向扩散项）}，\index{分子扩散项} \textcolor[rgb]{0.54,0.13,0.33}{C}是\textcolor[rgb]{0.54,0.13,0.33}{传质扩散项}。\textcolor[rgb]{0.56,0.28,0.16}{提高分子质量可以使分子扩散项降低，使得传质阻力升高}。\index{传质扩散项}\index{纵向扩散项}\index{涡流扩散项}
+
+
+\textbf{对于气相色谱：}
+\begin{equation}
+	H = 2\lambda d_{\ce{p}} +\dfrac{2\gamma D_{\ce{g}}}{u} +\left[ \dfrac{0.01k^{2}}{(1+k)^{2}}\dfrac{d_{\ce{p}}^{2}}{D_{\ce{g}}}+\dfrac{2kd_{\ce{f}}^{2}}{3(1+k)^{2}D_{1}} \right]u
+\end{equation}
+
+\textbf{对于液相色谱：}
+\begin{equation}
+	H = 2\lambda d_{\ce{p}} +\dfrac{2\gamma D_{\ce{m}}}{u} +\left( \dfrac{\omega_{\ce{m}} d_{\ce{p}}^{2}}{D_{\ce{m}}}+\dfrac{\omega_{\ce{sm}} d_{\ce{p}}^{2}}{D_{\ce{m}}}+\dfrac{\omega_{\ce{s}} d_{\ce{f}}^{2}}{D_{\ce{s}}} \right)u
+\end{equation}
+\section{气相色谱的细节}
+\subsection{关于检测器}
+\subsubsection{热导检测器}
+热导检测器（TCD）是一类\textcolor[rgb]{0.54,0.13,0.33}{通用型检测器}，属于浓度型检测器。\index{热导检测器}\index{通用型检测器}\index{浓度型检测器}
+
+\textcolor[rgb]{0.56,0.28,0.16}{注意：先开载气，再通桥电流；先断桥电流，再关载气。}
+\subsubsection{火焰离子化检测器}\index{火焰离子化检测器}
+火焰离子化检测器（FID）是一类\textcolor[rgb]{0.54,0.13,0.33}{专属型检测器}，属于质量型检测器。\index{专属型检测器}\index{质量型检测器}
+
+\subsection{柱效的选择}
+\subsubsection{分离度与柱效的关系}
+\begin{equation}
+	\left( \dfrac{R_{1}}{R_{1}} \right)^{2} = \dfrac{n_{1}}{n_{2}} = \dfrac{L_{1}}{L_{2}}
+	\label{1}
+\end{equation}
+
+{\fangsong 
+\textcolor[rgb]{0.07,0.36,0.57}{例题：在一根 1m 长的色谱柱上测得两组分的分离度为 0.68，要使它们完全分离，则柱长应为多少？}
+\textcolor[rgb]{0.54,0.13,0.33}{解：根据式（\textcolor[rgb]{0.54,0.13,0.33}{\ref{1}}），有：
+\begin{equation}
+	\left( \dfrac{R_{1}}{R_{1}} \right)^{2} = \dfrac{n_{1}}{n_{2}} = \dfrac{L_{1}}{L_{2}}
+\end{equation}则：
+\begin{equation}
+	L_{2} = L_{1} \left( \dfrac{R_{2}}{R_{1}} \right)^{2} = 1\ce{m} \times \left( \dfrac{1.5}{0.68} \right)^{2} =4.87\ce{m}
+\end{equation}
+这就说明，需要一个长达 5 m 的色谱柱。
+}
+}
+
+\subsection{定量分析方法}
+\subsubsection{计算峰面积}
+使用半峰宽法计算的公式：
+\begin{equation}
+	A = 1.065hW_{1/2}
+\end{equation}
+\subsubsection{定量校正因子}\index{定量校正因子}
+关联质量$\omega$与峰面积$A$：
+\begin{equation}
+	\omega_{i} = f_{i}^{'}A_{i}
+	\end{equation}
+	
+\subsubsection{归一化法}\index{归一化法}
+\textcolor[rgb]{0.54,0.13,0.33}{要求所有物质都出峰。}
+\begin{equation}
+	x_{i}\% = \dfrac{A_{i}f_{i}}{\displaystyle\sum_{B}A_{B}f_{B}}\times 100\%
+\end{equation}
+\subsubsection{内标法}\index{内标法}
+\textcolor[rgb]{0.54,0.13,0.33}{不需要所有组分都出峰，但是需要找到准确的好内标物质。}\\
+
+
+\textbf{相对校正因子的测量：}
+
+公式按照题目中目标得出（$s$ 是内标物，$i$ 是组分）：
+\begin{equation}
+	f_{i} = \dfrac{m_{i}h_{s}}{m_{s}h_{i}} 
+\end{equation}
+
+\textbf{含量的计算：}
+
+\begin{equation}
+	\omega_{i}\% = \dfrac{{m_{s}f_{i}A_{i}}}{\omega_{\text{总}}A_{s}} 
+\end{equation}
+
+\printindex
+
+
+\end{document}
+
